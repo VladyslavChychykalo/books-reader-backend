@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 
 const app = require("./app");
 
-const DB_NAME = "books_reader";
-const DB_PASSWORD = "NGZC9ZdWFgrAXrTo";
-
-const DB_HOST = `mongodb+srv://Vlad:${DB_PASSWORD}@cluster0.uhxtfy6.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+const { DB_HOST } = require("./config");
 
 mongoose
   .connect(DB_HOST)
