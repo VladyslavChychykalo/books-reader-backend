@@ -14,8 +14,9 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
       match: emailRegex,
+      unique: true,
+      required: true,
     },
     password: {
       type: String,
@@ -25,6 +26,8 @@ const userSchema = new Schema(
   },
   { versionKey: false, timestamps: true }
 );
+
+// unique - перевірити унікальність
 
 userSchema.post("save", handleMongooseError);
 
